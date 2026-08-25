@@ -1,45 +1,22 @@
+# pyrefly: ignore [missing-import]
 from scrapegraphai.graphs import SmartScraperGraph
-MODEL = "llama3.2"
 
-config = {
+graph_config = {
     "llm": {
-        "model": f"ollama/{MODEL}",
-        "model_tokens": 8192,
+        "model": "ollama/llama3.2",
+        "base_url": "http://localhost:11434",
     },
     "verbose": True,
     "headless": True,
 }
 
-scraper = SmartScraperGraph(
-prompt="""
-Read the webpage carefully and answer the following.
-
-A. What is the main purpose of ScrapeGraphAI?
-
-B. What problem is it trying to solve?
-
-C. Explain the difference between traditional web scraping
-and the approach described on this webpage.
-
-D. Identify three specific features mentioned on the webpage
-and explain why each feature could be useful.
-
-E. Who appears to be the target audience?
-
-F. Write a 3-sentence summary that preserves the most important
-information from the webpage.
-
-Important:
-- Use only information supported by the webpage.
-- Do not invent features or claims.
-- If the webpage does not provide enough information for an answer,
-  explicitly say so.
-""",
-    source="https://scrapegraphai.com/",
-    config=config,
+smart_scraper = SmartScraperGraph(
+    prompt="Extract the first 5 quotes and their authors.",
+    source="https://quotes.toscrape.com/",
+    config=graph_config,
 )
 
-result = scraper.run()
+result = smart_scraper.run()
 
-print("\n========== OLLAMA RESULT ==========\n")
+print("\n===== SCRAPED RESULT =====")
 print(result)

@@ -1,4 +1,4 @@
-# Environment
+# Environment — NEVER commit real secrets
 .env
 
 # Python virtual environment
@@ -13,6 +13,9 @@ __pycache__/
 
 # Streamlit
 .streamlit/
+
+# Agent audit log — may contain sensitive operation details
+agent_audit.jsonl
 
 # Editors / OS
 .vscode/
