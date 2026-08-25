@@ -1,3 +1,15 @@
+# --- Core chatbot (v1) ---
 streamlit>=1.32.0
 requests>=2.31.0
 python-dotenv>=1.0.0
+
+# --- Website scraping (v2) ---
+# IMPORTANT: scrapegraphai requires Python >=3.12,<4.0. Check your version
+# with `python --version` before installing (see README, section 2/4).
+scrapegraphai>=2.1.6
+
+# After "pip install -r requirements.txt", you must ALSO run:
+#     playwright install
+# This downloads the browser binaries ScrapeGraphAI/Playwright needs to
+# fetch web pages. It cannot be expressed as a pip requirement because it is
+# a separate download step, not a Python package. See README, section 9.
