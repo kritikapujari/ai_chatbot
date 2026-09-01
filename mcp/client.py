@@ -75,7 +75,7 @@ class GitHubMCPClientBase:
         """Return connection status info. Never raises."""
         try:
             login = self._gh.get_user().login
-            rate = self._gh.get_rate_limit().core
+            rate = self._gh.get_rate_limit().resources.core
             return {
                 "connected": True,
                 "user": login,

@@ -1,41 +1,18 @@
-<<<<<<< HEAD
-# --- Core chatbot (v1) ---
-=======
-# ── Core UI ──────────────────────────────────────────────────────────────────
->>>>>>> 461f92a (Add agent, MCP clients, scraper, and tests)
+# Core UI
 streamlit>=1.32.0
-python-dotenv>=1.0.0
-<<<<<<< HEAD
-
-# --- Website scraping (v2) ---
-# IMPORTANT: scrapegraphai requires Python >=3.12,<4.0. Check your version
-# with `python --version` before installing (see README, section 2/4).
-scrapegraphai>=2.1.6
-
-# After "pip install -r requirements.txt", you must ALSO run:
-#     playwright install
-# This downloads the browser binaries ScrapeGraphAI/Playwright needs to
-# fetch web pages. It cannot be expressed as a pip requirement because it is
-# a separate download step, not a Python package. See README, section 9.
-=======
 requests>=2.31.0
+python-dotenv>=1.0.0
 
-# ── LLM Backends ─────────────────────────────────────────────────────────────
-# Ollama (local models)
-# No extra package needed — uses requests to call the Ollama REST API
-
+# LLM Backends
 # Gemini
 google-generativeai>=0.7.0
 
-# OpenRouter (OpenAI-compatible)
+# OpenRouter / OpenAI-compatible API
 openai>=1.0.0
 
-# ── Agent / MCP ───────────────────────────────────────────────────────────────
-# GitHub MCP Client (calls GitHub REST API on behalf of the agent)
+# Agent / MCP
 PyGithub>=2.1.0
 
-# ── Web Scraping (optional — Chat mode RAG) ──────────────────────────────────
-# Uncomment these if you want ScrapeGraphAI website scraping support:
-# scrapegraphai
-# playwright
->>>>>>> 461f92a (Add agent, MCP clients, scraper, and tests)
+# Web Scraping
+scrapegraphai>=2.1.6
+playwright

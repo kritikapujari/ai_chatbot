@@ -347,6 +347,7 @@ class AgentOrchestrator:
                 gemini_history[-1]["parts"] if gemini_history else messages[-1]["content"],
                 tools=tools,
                 generation_config=genai.GenerationConfig(temperature=self.temperature),
+                # pyrefly: ignore [unexpected-keyword]
                 system_instruction=system_text if system_text else None,
             )
             return {"type": "gemini", "response": response}
